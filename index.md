@@ -1,12 +1,7 @@
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+<<p style="font-family: 'Noto Sans'; font-size: 24px; font-weight: bold; text-align: center;">
+Transformer For Medical AI
+</p>
 
-body {
-  font-family: 'Noto Sans', sans-serif;
-}
-</style>
-
-<p style="font-size: 24px; font-weight: bold; text-align: center;">Transformer For Medical AI</p>
 ![Main Image](./main.png)
 
 Abstract
