@@ -1,4 +1,12 @@
-Transformer For Medical AI
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+</style>
+
+<p style="font-size: 24px; font-weight: bold; text-align: center;">Transformer For Medical AI</p>
 ![Main Image](./main.png)
 
 Abstract
