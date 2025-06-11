@@ -32,6 +32,18 @@
       font-size: 14px;
       color: #555;
     }
+    .abstract-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 2rem;
+    }
+    .abstract-body {
+      font-size: 20px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+    }
   </style>
 </head>
 <body>
@@ -42,6 +54,11 @@
   <img src="./main.png" alt="Main Image">
 </div>
 
+<div class="abstract-title">Abstract</div>
+<div class="abstract-body">
+  We utilized the CheXpert dataset, a large-scale chest X-ray dataset, to diagnose chest conditions based on 14 labels and to localize pathological regions using heatmaps. To achieve this, we applied three vision transformer models—ViT, BEiT, and Swin. Initial experiments conducted on a test subset showed that the ViT Transformer model achieved the highest accuracy. Based on this result, we employed the ViT model on the full dataset to further improve diagnostic performance and enhance the precision of heatmap-based localization.
+</div>
+  
 <h2>Figure 1</h2>
 <div class="figure">
   <img src="./figure1.png" alt="Figure 1">
