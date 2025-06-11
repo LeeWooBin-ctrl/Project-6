@@ -1,3 +1,5 @@
+title: ""
+
 <p style="font-family: 'Noto Sans'; font-size: 24px; font-weight: bold; text-align: center;">
 Transformer For Medical AI
 </p>
