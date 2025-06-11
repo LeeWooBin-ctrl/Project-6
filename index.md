@@ -12,7 +12,7 @@ Figure 1(presents the performance of three vision transformer models—ViT, BEiT
 ![figure2](./figure2.png)
 Figure 2(shows the results of training and testing the ViT model using the full dataset, based on the findings from Figure 1. However, no significant improvement was observed in performance.)
 
-![figure3](./figure 3.png)
+![figure3](./figure3.png)
 Figure 3(The CLS token, which is trained to aggregate global information from the entire image, can be used to generate 2D heatmaps by visualizing the attention scores assigned to each patch. Figure 3 illustrates how the attention maps evolve as the model improves: the earlier model fails to focus accurately on the lesion, while the updated model correctly identifies disease-relevant regions.)
 
 👉 [Final Presentation File](./Transformers for Medical AI.pdf)
