@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Transformer for Medical AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+    }
+    img {
+      display: block;
+      margin: 1.5rem auto;
+      max-width: 90%;
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 2rem;
+    }
+    .figure {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .caption {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Transformer for Medical AI</h1>
+
+<div class="figure">
+  <img src="./main.png" alt="Main Image">
+</div>
+
+<h2>Figure 1</h2>
+<div class="figure">
+  <img src="./figure1.png" alt="Figure 1">
+  <div class="caption">
+    Performance comparison of ViT, BEiT, and Swin on test dataset. While Swin showed high training accuracy, it was unstable during testing. ViT was ultimately selected based on overall trends.
+  </div>
+</div>
+
+<h2>Figure 2</h2>
+<div class="figure">
+  <img src="./figure2.png" alt="Figure 2">
+  <div class="caption">
+    Result of ViT model trained on full dataset. No significant improvement was observed compared to the test subset results.
+  </div>
+</div>
+
+<h2>Figure 3</h2>
+<div class="figure">
+  <img src="./figure3.png" alt="Figure 3">
+  <div class="caption">
+    Left: Heatmap from an early-stage model with inaccurate attention. Right: Heatmap from a trained model showing focused attention on disease-relevant regions.
+  </div>
+</div>
+
+</body>
+</html>
