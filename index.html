@@ -76,7 +76,7 @@
 </div>
 
 <div class="figure">
-  <img src="./main1.png" alt="Main Image">
+  <img src="./Assets/main1.png" alt="Main Image">
 </div>
 
 <div class="abstract-title">Abstract</div>
@@ -143,9 +143,9 @@
 <div id="vit" class="tab-content active" style="margin-bottom: 4rem;">
   The Vision Transformer (ViT) applies the standard Transformer architecture directly to image patches, treating them as sequences similar to words in natural language. It splits the input image into fixed-size patches and processes them with self-attention mechanisms. ViT is known for its simplicity and scalability, performing well with large datasets but requiring significant data and compute resources to outperform CNN-based models.
   <div style="text-align: center; margin-top: 1rem;">
-    <img src="./ViT.png" alt="ViT Image" style="max-width: 75%; margin-top: 1rem;">
+    <img src="./Assets/ViT.png" alt="ViT Image" style="max-width: 75%; margin-top: 1rem;">
     <div style="margin-top: 1rem;">
-      <a href="./vit_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">ViT Code(Download)</a>
+      <a href="./Assets/vit_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">ViT Code(Download)</a>
     </div>
   </div>
 </div>
@@ -153,9 +153,9 @@
 <div id="beit" class="tab-content" style="margin-bottom: 4rem;">
   BEiT builds upon ViT by introducing a pretraining strategy similar to BERT in NLP. It treats image patches as discrete visual tokens and learns bidirectional representations using a masked image modeling objective. This enables the model to better capture contextual relationships within the image, significantly improving performance in downstream tasks, especially when labeled data is limited.
   <div style="text-align: center; margin-top: 1rem;">
-    <img src="./BEiT.png" alt="BEiT Image" style="max-width: 75%; margin-top: 1rem;">
+    <img src="./Assets/BEiT.png" alt="BEiT Image" style="max-width: 75%; margin-top: 1rem;">
     <div style="margin-top: 1rem;">
-      <a href="./BEiT_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">BEiT Code(Download)</a>
+      <a href="./Assets/BEiT_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">BEiT Code(Download)</a>
     </div>
   </div>
 </div>
@@ -163,9 +163,9 @@
 <div id="swin" class="tab-content" style="margin-bottom: 4rem;">
   The Swin Transformer introduces a hierarchical architecture that processes images through non-overlapping local windows with shifted configurations across layers. This design enables both local and global representation learning while maintaining computational efficiency. Its ability to model long-range dependencies and multi-scale features makes it particularly effective for dense prediction tasks such as detection and segmentation.
   <div style="text-align: center; margin-top: 1rem;">
-    <img src="./Swin.png" alt="Swin Image" style="max-width: 75%; margin-top: 1rem;">
+    <img src="./Assets/Swin.png" alt="Swin Image" style="max-width: 75%; margin-top: 1rem;">
     <div style="margin-top: 1rem;">
-      <a href="./Swin_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">Swin Code(Download)</a>
+      <a href="./Assets/Swin_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">Swin Code(Download)</a>
     </div>
   </div>
 </div>
@@ -182,28 +182,28 @@
 </script>
   
 <div class="figure">
-  <img src="./figure1.png" alt="Figure 1">
+  <img src="./Assets/figure1.png" alt="Figure 1">
   <div class="caption">
     <b>Figure 1 :</b> presents the performance of three vision transformer models—ViT, BEiT, and Swin—evaluated using a subset of the test dataset. Although the Swin model demonstrated high accuracy during training, it showed poor and unstable performance on the test set. The BEiT model achieved higher test accuracy than the ViT model; however, the ViT model exhibited more consistent improvement in accuracy as the number of epochs increased and showed better performance during training. Based on this trend, we hypothesized that the ViT model would achieve further improvement when trained on the full dataset. Therefore, we selected the ViT model for our final experiments.
   </div>
 </div>
 
 <div class="figure">
-  <img src="./figure2.png" alt="Figure 2">
+  <img src="./Assets/figure2.png" alt="Figure 2">
   <div class="caption" style="margin-bottom: 3rem;">
     <b>Figure 2 :</b> shows the results of training and testing the ViT model using the full dataset, based on the findings from Figure 1. However, no significant improvement was observed in performance.
   </div>
 </div>
 
 <div class="figure">
-  <img src="./figure3.1.png" alt="Figure 3">
+  <img src="./Assets/figure3.1.png" alt="Figure 3">
   <div class="caption">
     <b>Figure 3 :</b> The CLS token, which is trained to aggregate global information from the entire image, can be used to generate 2D heatmaps by visualizing the attention scores assigned to each patch. Figure 3 illustrates how the attention maps evolve as the model improves: the earlier model fails to focus accurately on the lesion, while the updated model correctly identifies disease-relevant regions.
   </div>
 </div>
   
 <div style="text-align: center; margin-top: 4rem;">
-  <a href="./Transformers for Medical AI.pdf" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
+  <a href="./Assets/Transformers for Medical AI.pdf" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
     Final Presentation Report
   </a>
 </div>
