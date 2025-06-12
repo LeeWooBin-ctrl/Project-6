@@ -139,15 +139,15 @@
 </div>
 
 <div id="vit" class="tab-content active">
-  <b>ViT</b> (Vision Transformer) was selected as the final model due to its steady performance improvements and strong training accuracy trends. Even though BEiT had slightly better test accuracy in earlier experiments, ViT's consistency made it more suitable for full-dataset training.
+  <b>ViT</b> The Vision Transformer (ViT) applies the standard Transformer architecture directly to image patches, treating them as sequences similar to words in natural language. It splits the input image into fixed-size patches and processes them with self-attention mechanisms. ViT is known for its simplicity and scalability, performing well with large datasets but requiring significant data and compute resources to outperform CNN-based models.
 </div>
 
 <div id="beit" class="tab-content">
-  <b>BEiT</b> showed stronger test accuracy than ViT when trained on the sample subset. However, it lacked consistency in training accuracy, leading to concerns about performance on the full dataset.
+  <b>BEiT</b> BEiT builds upon ViT by introducing a pretraining strategy similar to BERT in NLP. It treats image patches as discrete visual tokens and learns bidirectional representations using a masked image modeling objective. This enables the model to better capture contextual relationships within the image, significantly improving performance in downstream tasks, especially when labeled data is limited.
 </div>
 
 <div id="swin" class="tab-content">
-  <b>Swin</b> Transformer achieved high accuracy in the training phase, but suffered from poor and unstable test performance, making it unreliable for deployment.
+  <b>Swin</b> The Swin Transformer introduces a hierarchical architecture that processes images through non-overlapping local windows with shifted configurations across layers. This design enables both local and global representation learning while maintaining computational efficiency. Its ability to model long-range dependencies and multi-scale features makes it particularly effective for dense prediction tasks such as detection and segmentation.
 </div>
 
 <script>
