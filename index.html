@@ -91,6 +91,63 @@
 <div class="caption" style="text-align: center; font-size: 16px; margin: 0 auto 4rem auto;">
   <a href="https://www.kaggle.com/datasets/ashery/chexpert" target="_blank">CheXpert Dataset</a>
 </div>
+
+<div class="abstract-title">3 - Vision Transformer</div>
+<div class="accordion">
+  <button class="accordion-btn">ViT</button>
+  <div class="accordion-content">
+    <p>Details about ViT model performance and analysis.</p>
+  </div>
+
+  <button class="accordion-btn">BEiT</button>
+  <div class="accordion-content">
+    <p>Details about BEiT model performance and analysis.</p>
+  </div>
+
+  <button class="accordion-btn">Swin</button>
+  <div class="accordion-content">
+    <p>Details about Swin model performance and analysis.</p>
+  </div>
+</div>
+
+<style>
+  .accordion-btn {
+    width: 100%;
+    text-align: left;
+    padding: 0.7rem;
+    font-size: 16px;
+    font-weight: bold;
+    background: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+  .accordion-content {
+    display: none;
+    padding: 0.5rem 1rem;
+    border-left: 2px solid #ccc;
+    margin-bottom: 1rem;
+    background: #fafafa;
+    font-size: 16px;
+    text-align: justify;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .accordion-btn.active {
+    background-color: #e0e0e0;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.accordion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      const content = btn.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
   
 <div class="figure">
   <img src="./figure1.png" alt="Figure 1">
