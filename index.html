@@ -92,49 +92,73 @@
   <a href="https://www.kaggle.com/datasets/ashery/chexpert" target="_blank">CheXpert Dataset</a>
 </div>
 
-<div class="abstract-title">
-  Experiment <span style="font-weight: normal; font-size: 20px;">(Three Vision Transformer)</span>
-</div>
-
-<div class="tabs" style="display: flex; justify-content: center; gap: 1rem; margin: 1rem 0;">
-  <button class="tab-btn active" data-tab="vit">ViT</button>
-  <button class="tab-btn" data-tab="beit">BEiT</button>
-  <button class="tab-btn" data-tab="swin">Swin</button>
-</div>
-
-<div class="tab-content active" id="vit" style="max-width: 800px; margin: 0 auto; font-size: 16px; text-align: justify;">
-  <p>Details about ViT model performance and analysis.</p>
-</div>
-<div class="tab-content" id="beit" style="max-width: 800px; margin: 0 auto; font-size: 16px; text-align: justify; display: none;">
-  <p>Details about BEiT model performance and analysis.</p>
-</div>
-<div class="tab-content" id="swin" style="max-width: 800px; margin: 0 auto; font-size: 16px; text-align: justify; display: none;">
-  <p>Details about Swin model performance and analysis.</p>
-</div>
+<div class="abstract-title" style="margin-top: 4rem;">Experiment <span style="font-weight: normal; font-size: 20px;">(Three Vision Transformer)</span></div>
 
 <style>
-  .tab-btn {
-    padding: 0.5rem 1rem;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    background: #f0f0f0;
+  .tab-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    gap: 1rem;
   }
-  .tab-btn.active {
+  .tab-button {
+    padding: 0.7rem 2rem;
+    font-size: 16px;
+    border: 2px solid #aaa;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    font-family: 'Noto Sans', sans-serif;
+    width: 160px;
+    text-align: center;
+  }
+  .tab-button:hover {
+    background-color: #eee;
+  }
+  .tab-button.active {
     background-color: #ddd;
+    font-weight: bold;
+  }
+  .tab-content {
+    display: none;
+    max-width: 800px;
+    margin: 1rem auto;
+    text-align: justify;
+    font-size: 16px;
+  }
+  .tab-content.active {
+    display: block;
   }
 </style>
 
+<div class="tab-container">
+  <button class="tab-button active" onclick="showTab('vit')">ViT</button>
+  <button class="tab-button" onclick="showTab('beit')">BEiT</button>
+  <button class="tab-button" onclick="showTab('swin')">Swin</button>
+</div>
+
+<div id="vit" class="tab-content active">
+  <b>ViT</b> (Vision Transformer) was selected as the final model due to its steady performance improvements and strong training accuracy trends. Even though BEiT had slightly better test accuracy in earlier experiments, ViT's consistency made it more suitable for full-dataset training.
+</div>
+
+<div id="beit" class="tab-content">
+  <b>BEiT</b> showed stronger test accuracy than ViT when trained on the sample subset. However, it lacked consistency in training accuracy, leading to concerns about performance on the full dataset.
+</div>
+
+<div id="swin" class="tab-content">
+  <b>Swin</b> Transformer achieved high accuracy in the training phase, but suffered from poor and unstable test performance, making it unreliable for deployment.
+</div>
+
 <script>
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
-      btn.classList.add('active');
-      document.getElementById(btn.getAttribute('data-tab')).style.display = 'block';
-    });
-  });
+  function showTab(id) {
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    contents.forEach(content => content.classList.remove('active'));
+    document.querySelector(`#${id}`).classList.add('active');
+    event.target.classList.add('active');
+  }
 </script>
   
 <div class="figure">
