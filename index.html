@@ -92,59 +92,47 @@
   <a href="https://www.kaggle.com/datasets/ashery/chexpert" target="_blank">CheXpert Dataset</a>
 </div>
 
-<div class="abstract-title">3 - Vision Transformer</div>
-<div class="accordion">
-  <button class="accordion-btn">ViT</button>
-  <div class="accordion-content">
-    <p>Details about ViT model performance and analysis.</p>
-  </div>
+<div class="abstract-title">
+  Experiment <span style="font-weight: normal; font-size: 20px;">(Three Vision Transformer)</span>
+</div>
 
-  <button class="accordion-btn">BEiT</button>
-  <div class="accordion-content">
-    <p>Details about BEiT model performance and analysis.</p>
-  </div>
+<div class="tabs" style="display: flex; justify-content: center; gap: 1rem; margin: 1rem 0;">
+  <button class="tab-btn active" data-tab="vit">ViT</button>
+  <button class="tab-btn" data-tab="beit">BEiT</button>
+  <button class="tab-btn" data-tab="swin">Swin</button>
+</div>
 
-  <button class="accordion-btn">Swin</button>
-  <div class="accordion-content">
-    <p>Details about Swin model performance and analysis.</p>
-  </div>
+<div class="tab-content active" id="vit" style="max-width: 800px; margin: 0 auto; font-size: 16px; text-align: justify;">
+  <p>Details about ViT model performance and analysis.</p>
+</div>
+<div class="tab-content" id="beit" style="max-width: 800px; margin: 0 auto; font-size: 16px; text-align: justify; display: none;">
+  <p>Details about BEiT model performance and analysis.</p>
+</div>
+<div class="tab-content" id="swin" style="max-width: 800px; margin: 0 auto; font-size: 16px; text-align: justify; display: none;">
+  <p>Details about Swin model performance and analysis.</p>
 </div>
 
 <style>
-  .accordion-btn {
-    width: 100%;
-    text-align: left;
-    padding: 0.7rem;
+  .tab-btn {
+    padding: 0.5rem 1rem;
     font-size: 16px;
     font-weight: bold;
-    background: #f0f0f0;
     border: none;
     cursor: pointer;
-    margin-top: 0.5rem;
+    background: #f0f0f0;
   }
-  .accordion-content {
-    display: none;
-    padding: 0.5rem 1rem;
-    border-left: 2px solid #ccc;
-    margin-bottom: 1rem;
-    background: #fafafa;
-    font-size: 16px;
-    text-align: justify;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .accordion-btn.active {
-    background-color: #e0e0e0;
+  .tab-btn.active {
+    background-color: #ddd;
   }
 </style>
 
 <script>
-  document.querySelectorAll('.accordion-btn').forEach(btn => {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      btn.classList.toggle('active');
-      const content = btn.nextElementSibling;
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+      btn.classList.add('active');
+      document.getElementById(btn.getAttribute('data-tab')).style.display = 'block';
     });
   });
 </script>
