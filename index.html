@@ -184,14 +184,14 @@
 <div class="figure">
   <img src="./Assets/figure1.png" alt="Figure 1">
   <div class="caption">
-    <b>Figure 1 :</b> presents the performance of three vision transformer models—ViT, BEiT, and Swin—evaluated using a subset of the test dataset. Although the Swin model demonstrated high accuracy during training, it showed poor and unstable performance on the test set. The BEiT model achieved higher test accuracy than the ViT model; however, the ViT model exhibited more consistent improvement in accuracy as the number of epochs increased and showed better performance during training. Based on this trend, we hypothesized that the ViT model would achieve further improvement when trained on the full dataset. Therefore, we selected the ViT model for our final experiments.
+    <b>Figure 1 :</b> This slide presents a comparative evaluation of three transformer-based architectures: Vision Transformer (ViT), Swin Transformer, and BEiT Transformer. Their performance was measured across 10 training epochs using both accuracy and loss metrics on training and test datasets. The accuracy plot on the left demonstrates that although the Swin Transformer achieves the highest accuracy during training, the BEiT Transformer consistently outperforms the others on the test set. This suggests that BEiT has superior generalization capabilities to unseen data. Correspondingly, the loss plot on the right reinforces this observation. The BEiT Transformer maintains the lowest test loss throughout all epochs, indicating its effectiveness in minimizing prediction error on novel inputs. In contrast, both ViT and Swin exhibit either increasing or plateauing test loss trends, which may be indicative of overfitting. Overall, among the evaluated models, the BEiT Transformer demonstrates the most favorable trade-off between training performance and generalization, establishing it as the most robust architecture in this comparison.
   </div>
 </div>
 
 <div class="figure">
   <img src="./Assets/figure2.png" alt="Figure 2">
   <div class="caption" style="margin-bottom: 3rem;">
-    <b>Figure 2 :</b> shows the results of training and testing the ViT model using the full dataset, based on the findings from Figure 1. However, no significant improvement was observed in performance.
+    <b>Figure 2 :</b> This slide presents a performance comparison of the Vision Transformer (ViT) model trained on the full CheXpert dataset versus its downsampled counterpart. As illustrated in the graphs, both accuracy and loss metrics remain nearly identical across training epochs. This outcome suggests that the ViT model maintains comparable performance even when trained on a reduced dataset, indicating a degree of robustness. Such results highlight the potential for significant computational efficiency without compromising diagnostic effectiveness.
   </div>
 </div>
 
