@@ -184,14 +184,14 @@
 <div class="figure">
   <img src="./Assets/figure1.png" alt="Figure 1">
   <div class="caption">
-    <b>Figure 1 :</b> This slide presents a comparative evaluation of three transformer-based architectures: Vision Transformer (ViT), Swin Transformer, and BEiT Transformer. Their performance was measured across 10 training epochs using both accuracy and loss metrics on training and test datasets. The accuracy plot on the left demonstrates that although the Swin Transformer achieves the highest accuracy during training, the BEiT Transformer consistently outperforms the others on the test set. This suggests that BEiT has superior generalization capabilities to unseen data. Correspondingly, the loss plot on the right reinforces this observation. The BEiT Transformer maintains the lowest test loss throughout all epochs, indicating its effectiveness in minimizing prediction error on novel inputs. In contrast, both ViT and Swin exhibit either increasing or plateauing test loss trends, which may be indicative of overfitting. Overall, among the evaluated models, the BEiT Transformer demonstrates the most favorable trade-off between training performance and generalization, establishing it as the most robust architecture in this comparison.
+    <b>Figure 1 :</b> presents a comparative evaluation of three transformer-based architectures: Vision Transformer (ViT), Swin Transformer, and BEiT Transformer. Their performance was measured across 10 training epochs using both accuracy and loss metrics on training and test datasets. The accuracy plot on the left demonstrates that although the Swin Transformer achieves the highest accuracy during training, the BEiT Transformer consistently outperforms the others on the test set. This suggests that BEiT has superior generalization capabilities to unseen data. Correspondingly, the loss plot on the right reinforces this observation. The BEiT Transformer maintains the lowest test loss throughout all epochs, indicating its effectiveness in minimizing prediction error on novel inputs. In contrast, both ViT and Swin exhibit either increasing or plateauing test loss trends, which may be indicative of overfitting. Overall, among the evaluated models, the BEiT Transformer demonstrates the most favorable trade-off between training performance and generalization, establishing it as the most robust architecture in this comparison.
   </div>
 </div>
 
 <div class="figure">
   <img src="./Assets/figure2.png" alt="Figure 2">
   <div class="caption" style="margin-bottom: 3rem;">
-    <b>Figure 2 :</b> This slide presents a performance comparison of the Vision Transformer (ViT) model trained on the full CheXpert dataset versus its downsampled counterpart. As illustrated in the graphs, both accuracy and loss metrics remain nearly identical across training epochs. This outcome suggests that the ViT model maintains comparable performance even when trained on a reduced dataset, indicating a degree of robustness. Such results highlight the potential for significant computational efficiency without compromising diagnostic effectiveness.
+    <b>Figure 2 :</b> presents a performance comparison of the Vision Transformer (ViT) model trained on the full CheXpert dataset versus its downsampled counterpart. As illustrated in the graphs, both accuracy and loss metrics remain nearly identical across training epochs. This outcome suggests that the ViT model maintains comparable performance even when trained on a reduced dataset, indicating a degree of robustness. Such results highlight the potential for significant computational efficiency without compromising diagnostic effectiveness.
   </div>
 </div>
 
@@ -200,6 +200,11 @@
   <div class="caption">
     <b>Figure 3 :</b> The CLS token, which is trained to aggregate global information from the entire image, can be used to generate 2D heatmaps by visualizing the attention scores assigned to each patch. Figure 3 illustrates how the attention maps evolve as the model improves: the earlier model fails to focus accurately on the lesion, while the updated model correctly identifies disease-relevant regions.
   </div>
+</div>
+
+<div class="abstract-title">Discussion And Future Work</div>
+<div class="abstract-body">
+  We evaluated three transformer (ViT, Swin, and BEiT TransFormer) on the CheXpert dataset, using both full and reduced versions to assess their performance. Among them, BEiT demonstrated the most robust results, attributed to its use of masked-image modeling during pre-training, which enhances generalization and the ability to capture diverse image features. For future work, we plan to conduct robustness tests by introducing small Gaussian noise or perturbations to input images, measuring performance degradation, and applying additional training to improve model resilience if necessary.
 </div>
   
 <div style="text-align: center; margin-top: 4rem;">
