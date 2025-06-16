@@ -8,10 +8,7 @@ Please refer to our GitHub page for detailed explanation
 [GitHub Page Link](https://leewoobin-ctrl.github.io/Project-6/)
 
 ## Team Members and Their contributions
-Zheng Hexing 2023311430 : Investigated the SWIN Transformer
-
-Chang Hwan Kim 2024321234 : Implemented heatmap visualizations; contributed to the GitHub repository
-
-Maftuna Ziyamova 2024311551 : Led the overall project; investigated Vision Transformers including ViT, BEIT, and SWIN; contributed to heatmap analysis
-
+Zheng Hexing 2023311430 : Investigated the SWIN Transformer  
+Chang Hwan Kim 2024321234 : Implemented heatmap visualizations; contributed to the GitHub repository  
+Maftuna Ziyamova 2024311551 : Led the overall project; investigated Vision Transformers including ViT, BEIT, and SWIN; contributed to heatmap analysis  
 Lee Woo Bin 2025311560 : Analyzed the BEIT Transformer; created and submitted the GitHub repository
