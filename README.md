@@ -1,8 +1,7 @@
-# Transformers for Medical AI
+# Transformers for Medical AI(Project 6)
 
-## Overview
-
-We applied Vision Transformers (ViT, BEiT, Swin) to the CheXpert dataset to detect 14 chest-related conditions.
+## Project Summary
+We utilized the CheXpert dataset, a large collection of chest X-rays, to explore the diagnostic performance of three Vision Transformer models—ViT, BEiT, and Swin. These models were trained to classify 14 labeled thoracic diseases, and we further aimed to visualize the model’s decision-making process using heatmaps that highlight the affected areas in the images.
 
 ## Model Comparison
 | Model | Test Accuracy | Test Loss |
