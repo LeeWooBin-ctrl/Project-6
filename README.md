@@ -1,9 +1,5 @@
 # Transformers for Medical AI
 
-<p align="center">
-  <img src="./main.png" width="500"/>
-</p>
-
 ## Overview
 
 We applied Vision Transformers (ViT, BEiT, Swin) to the CheXpert dataset to detect 14 chest-related conditions.
