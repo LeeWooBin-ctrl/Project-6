@@ -14,6 +14,7 @@ We applied Vision Transformers (ViT, BEiT, Swin) to the CheXpert dataset to dete
 
 ## Links
 
+- [More detailed Verision In Our GitHub Page](https://leewoobin-ctrl.github.io/Project-6/)
 - 📄 [Final Report (PDF)](./Transformers%20for%20Medical%20AI.pdf)
 - 🧠 [ViT Code](./ViT.md)
 - 🧠 [BEiT Code](./BEiT.md)
