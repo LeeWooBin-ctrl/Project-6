@@ -8,12 +8,10 @@ Please refer to our GitHub page for detailed explanation
 Click Here 👉[GitHub Page Link](https://leewoobin-ctrl.github.io/Project-6/)
 
 ## Final Presentation Q&A
-Q1.  
+Q1. "How was overfitting in ViT heatmaps handled?"  
 A1.  
-Q2.  
-A2.  
-Q3.  
-A3.  
+Q2. “What are the insights into BEiT’s superior performance?”  
+A2.    
 
 
 ## Team Members and Their contributions
