@@ -49,7 +49,7 @@ For a more detailed analysis and accompanying graphs, please refer to Here 👉[
 
 ### 1. Visit Our GitHub Page
 You can access our project via the following link:  
-👉 [Project GitHub Page](https://leewoobin-ctrl.github.io/Project-6/)
+👉 [GitHub Page Link](https://leewoobin-ctrl.github.io/Project-6/)
 
 ---
 
