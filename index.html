@@ -85,28 +85,31 @@
 
 <div class="abstract-title">Abstract</div>
 <div class="abstract-body">
-  <p>
-  We utilized the <b>CheXpert</b> dataset, a large-scale chest X-ray benchmark, to perform multi-label classification of 14 thoracic diseases and to localize pathological regions using heatmap-based explainability techniques.
-</p>
 <p>
-  To accomplish this, we evaluated three vision transformer architectures—<b>ViT</b>, <b>BEiT</b>, and <b>Swin Transformer</b>.
+  We utilized the <span class="highlight">CheXpert</span> dataset, a large-scale chest X-ray benchmark, to perform multi-label classification of <span class="highlight">14 thoracic diseases</span> and to localize pathological regions using <span class="highlight">heatmap-based explainability techniques</span>.
 </p>
+
 <p>
-  Preliminary experiments on a test subset indicated that <b>ViT</b> outperformed the others in terms of classification accuracy. Based on this finding, we employed the ViT model on the full dataset to enhance diagnostic performance and improve the spatial precision of the generated heatmaps.
+  To accomplish this, we evaluated three vision transformer architectures—<span class="highlight">ViT</span>, <span class="highlight">BEiT</span>, and <span class="highlight">Swin Transformer</span>.
+</p>
+
+<p>
+  Preliminary experiments on a test subset indicated that <span class="highlight">ViT</span> outperformed the others in terms of classification accuracy. Based on this finding, we employed the <span class="highlight">ViT</span> model on the full dataset to enhance diagnostic performance and improve the spatial precision of the generated heatmaps.
 </p>
 </div>
 
 <div class="abstract-title">Dataset</div>
 <div class="abstract-body">
-  <p>
-  We used the <b>CheXpert-v1.0-small</b> dataset, a downsized version of the original <b>CheXpert</b> dataset. It contains <b>224,316 chest radiographs</b> from <b>65,240 patients</b>, labeled with <b>14 clinical observations</b>.
+<p>
+  We used the <span class="highlight">CheXpert-v1.0-small</span> dataset, a downsized version of the original <span class="highlight">CheXpert</span> dataset. It contains <span class="highlight">224,316 chest radiographs</span> from <span class="highlight">65,240 patients</span>, labeled with <span class="highlight">14 clinical observations</span>.
 </p>
 
 <p>
-  The labels were generated using an <b>automated labeling system</b> capable of detecting and classifying findings, including those with <b>inherent uncertainty</b>.
+  The labels were generated using an <span class="highlight">automated labeling system</span> capable of detecting and classifying findings, including those with <span class="highlight">inherent uncertainty</span>.
 </p>
+
 <p>
-  To ensure labeling reliability, a validation set of <strong>200 studies</strong> was <strong>manually annotated</strong> by three <strong>board-certified radiologists</strong>.
+  To ensure labeling reliability, a validation set of <span class="highlight">200 studies</span> was <span class="highlight">manually annotated</span> by three <span class="highlight">board-certified radiologists</span>.
 </p>
 </div>
 <div style="text-align: center; margin: 0 auto 4rem auto;">
@@ -120,7 +123,7 @@
 </div>
 </div>
 
-<div class="abstract-title" style="margin-top: 4rem;">BackGround <span style="font-weight: normal; font-size: 20px;">(Three Vision Transformers)</span></div>
+<div class="abstract-title" style="margin-top: 4rem;" id="background">BackGround <span style="font-weight: normal; font-size: 20px;">(Three Vision Transformers)</span></div>
 
 <style>
   .tab-container {
@@ -206,7 +209,9 @@
     event.target.classList.add('active');
   }
 </script>
-  
+
+
+<div class="abstract-title">Results</div>  
 <div class="figure">
   <img src="./Assets/figure1.png" alt="Figure 1">
   <div class="caption">
@@ -241,14 +246,34 @@
 <div class="figure">
   <img src="./Assets/figure2.png" alt="Figure 2">
   <div class="caption" style="margin-bottom: 3rem;">
-    <b>Figure 2 :</b> presents a performance comparison of the Vision Transformer (ViT) model trained on the full CheXpert dataset versus its downsampled counterpart. As illustrated in the graphs, both accuracy and loss metrics remain nearly identical across training epochs. This outcome suggests that the ViT model maintains comparable performance even when trained on a reduced dataset, indicating a degree of robustness. Such results highlight the potential for significant computational efficiency without compromising diagnostic effectiveness.
+<p>
+  The comparison between the <span class="highlight">full</span> and <span class="highlight">downsampled</span> datasets shows that model performance remains <span class="highlight">nearly unchanged</span>, even when trained on significantly less data.
+</p>
+
+<p>
+  Despite the <span class="highlight">full dataset</span> being over <span class="highlight">400 GB</span> and the <span class="highlight">downsampled version</span> only <span class="highlight">11 GB</span>, <span class="highlight">accuracy</span> and <span class="highlight">loss</span> metrics are almost identical.
+</p>
+
+<p>
+  This finding highlights the potential for substantial <span class="highlight">resource savings</span>—in terms of both <span class="highlight">storage</span> and <span class="highlight">computational cost</span>, without sacrificing <span class="highlight">model effectiveness</span>.
+</p>
   </div>
 </div>
 
 <div class="figure">
   <img src="./Assets/figure3.1.png" alt="Figure 3">
   <div class="caption">
-    <b>Figure 3 :</b> The CLS token, which is trained to aggregate global information from the entire image, can be used to generate 2D heatmaps by visualizing the attention scores assigned to each patch. Figure 3 illustrates how the attention maps evolve as the model improves: the earlier model fails to focus accurately on the lesion, while the updated model correctly identifies disease-relevant regions.
+<p>
+  The <span class="highlight">CLS token</span>, designed to aggregate <span class="highlight">global information</span> across the image, can be leveraged to create <span class="highlight">2D attention heatmaps</span> by visualizing how <span class="highlight">attention</span> is distributed across patches.
+</p>
+
+<p>
+  The <span class="highlight">heatmaps</span> show that as the model improves, its attention becomes more focused on <span class="highlight">disease-relevant regions</span>.
+</p>
+
+<p>
+  Initially, the model fails to <span class="highlight">localize lesions</span> accurately, but after training updates, it correctly highlights <span class="highlight">critical areas</span>, demonstrating improved <span class="highlight">interpretability</span> and <span class="highlight">diagnostic alignment</span>.
+</p>
   </div>
 </div>
 
@@ -259,10 +284,29 @@
 
 <div class="abstract-title">Final Presentation Q&A</div>
 <div class="abstract-body">
-  Q1. "How was overfitting in ViT heatmaps handled?"<br>
-  A1. <br>
-  Q2. “What are the insights into BEiT’s superior performance?”<br>
-  A2. 
+  Q1. "How did you handle potential overfitting observed in ViT attention heatmaps?"<br>
+  A1. "Initially, the <span class="highlight">ViT model</span> exhibited signs of <span class="highlight">overfitting</span> when trained to predict only <span class="highlight">4 labels</span>, as the limited and <span class="highlight">binary classification</span> task (negative/positive) introduced significant <span class="highlight">randomness</span>, causing the model to rely on <span class="highlight">guesswork</span> rather than genuine <span class="highlight">pattern learning</span>.
+
+<p>
+  After properly training the model to predict all <span class="highlight">14 labels</span>—thus enriching the <span class="highlight">complexity</span> and <span class="highlight">diversity</span> of the training data—the <span class="highlight">ViT model</span> showed substantially reduced <span class="highlight">overfitting</span>.
+</p>
+
+<p>
+  This comprehensive labeling encouraged the model to learn <span class="highlight">robust features</span> rather than memorizing limited patterns, ultimately resolving the issue of <span class="highlight">overfitting</span> observed earlier."
+</p>
+  Q2. “Can you provide insights into why BEiT achieved superior performance compared to ViT and Swin Transformers?”<br>
+  A2. "<span class="highlight">BEiT’s</span> superior performance likely stems from its effective <span class="highlight">pre-training strategy</span>, specifically <span class="highlight">masked image modeling</span>, which encourages the model to learn <span class="highlight">robust</span> and <span class="highlight">generalized representations</span> from image data.
+
+<p>
+  <span class="highlight">Attention visualizations</span> confirmed <span class="highlight">BEiT’s</span> ability to consistently and precisely focus on <span class="highlight">clinically relevant regions</span>, supporting the notion that <span class="highlight">BEiT</span> develops better <span class="highlight">internal representations</span> and <span class="highlight">decision-making capabilities</span> tailored for <span class="highlight">medical diagnosis tasks</span>."
+</p>
+  Q2. “Can you provide more details on the benchmark comparison of the three transformer models?”<br>
+  A2. "A comprehensive benchmark comparison of the three <span class="highlight">transformer-based models</span>—<span class="highlight">ViT</span>, <span class="highlight">Swin</span>, and <span class="highlight">BEiT</span>—was performed, evaluating their performance on <span class="highlight">accuracy</span>, <span class="highlight">loss metrics</span>, and <span class="highlight">interpretability</span> through <span class="highlight">attention visualizations</span>.
+
+<p>
+  A complete and detailed analysis of these comparisons, highlighting key strengths and weaknesses of each model, can be found 
+  <a href="#background" style="text-decoration: none; color: #1565c0; font-weight: bold;">here</a>.
+</p>"
 </div>
   
 <div style="text-align: center; margin-top: 4rem;">
