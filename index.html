@@ -286,6 +286,24 @@
     <img src="./Assets/BEiT.gif" alt="BEiT Attention Visualization" style="width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
     <div style="text-align: center; margin-top: 0.5rem;">BEiT Attention</div>
   </div>
+  <div class="caption" style="margin-bottom: 5rem;">
+<p>
+  These GIFs illustrate how <span class="highlight">attention heads</span> from two different <span class="highlight">transformer architectures</span>—<span class="highlight">Vision Transformer (ViT)</span> and <span class="highlight">BEiT</span>—distribute focus across the input <span class="highlight">chest X-ray</span>.
+</p>
+
+<p>
+  <span class="highlight">Left: ViT Attention (Small Dataset)</span><br>
+  The <span class="highlight">attention patterns</span> in <span class="highlight">ViT</span> appear <span class="highlight">fragmented</span> and <span class="highlight">inconsistent</span> across heads. Some heads attend to <span class="highlight">irrelevant areas</span> (e.g., image corners or blank regions), and there is limited focus on the actual <span class="highlight">lesion site</span>. This suggests <span class="highlight">lower interpretability</span> and a lack of specialization in directing attention toward <span class="highlight">disease-relevant features</span>.
+</p>
+
+<p>
+  <span class="highlight">Right: BEiT Attention (Small Dataset)</span><br>
+  <span class="highlight">BEiT</span> shows more <span class="highlight">concentrated</span> and <span class="highlight">structured attention patterns</span>. As the heads cycle, the focus tends to remain closer to the <span class="highlight">lesion</span> or <span class="highlight">medically meaningful regions</span>, implying <span class="highlight">stronger feature localization</span>. This behavior reflects <span class="highlight">BEiT’s enhanced representation learning</span> and better alignment with <span class="highlight">diagnostic cues</span> in the image.
+</p>
+
+<p>
+  Overall, these visualizations highlight how <span class="highlight">BEiT</span> more effectively allocates attention across its heads, offering greater <span class="highlight">interpretability</span> and potential <span class="highlight">reliability</span> in <span class="highlight">medical imaging tasks</span> compared to <span class="highlight">ViT</span>.
+</p>
 </div>
 
 <div class="abstract-title">Discussion And Future Work</div>
