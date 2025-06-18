@@ -44,6 +44,28 @@ These visual differences demonstrate that BEiT offers **superior interpretabilit
 > It is, therefore, the most suitable model for **medical imaging diagnosis** in this evaluation.
 For a more detailed analysis and accompanying graphs, please refer to Here 👉[GitHub Page Link](https://leewoobin-ctrl.github.io/Project-6/)
 
+## 🔧 Installation Steps
+
+### 1. Visit Our GitHub Page
+You can access our project via the following link:  
+👉 [Project GitHub Page](https://leewoobin-ctrl.github.io/Project-6/)
+
+---
+
+### 2. Available Resources on the Page
+
+The GitHub Page provides links to:
+
+- The **CheXpert small dataset** and **full dataset**
+- The implementation code for all **three transformer models** we used (ViT, Swin, and BEiT)
+- The final presentation report in **PDF format**
+
+---
+
+### 3. Assets Folder in the Repository
+
+Except for the datasets,  
+all other files mentioned above are also included in the `/Assets` folder of the `Project-6` GitHub repository.
 
 ## Final Presentation Q&A
 Q1. "How did you handle potential overfitting observed in ViT attention heatmaps?" 
