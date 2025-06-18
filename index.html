@@ -85,16 +85,32 @@
 
 <div class="abstract-title">Abstract</div>
 <div class="abstract-body">
-We utilized the <span class="highlight">CheXpert</span> dataset, a large-scale chest X-ray benchmark, to perform multi-label classification of <span class="highlight">14 thoracic diseases</span> and to localize pathological regions using <span class="highlight">heatmap-based explainability techniques</span>.<br>
-To accomplish this, we evaluated three vision transformer architectures—<span class="highlight">ViT</span>, <span class="highlight">BEiT</span>, and <span class="highlight">Swin Transformer</span>.<br>
-Preliminary experiments on a test subset indicated that <span class="highlight">ViT</span> outperformed the others in terms of classification accuracy. Based on this finding, we employed the <span class="highlight">ViT</span> model on the full dataset to enhance diagnostic performance and improve the spatial precision of the generated heatmaps.
+<p>
+  We utilized the <span class="highlight">CheXpert</span> dataset, a large-scale chest X-ray benchmark, to perform multi-label classification of <span class="highlight">14 thoracic diseases</span> and to localize pathological regions using <span class="highlight">heatmap-based explainability techniques</span>.
+</p>
+
+<p>
+  To accomplish this, we evaluated three vision transformer architectures—<span class="highlight">ViT</span>, <span class="highlight">BEiT</span>, and <span class="highlight">Swin Transformer</span>.
+</p>
+
+<p>
+  Preliminary experiments on a test subset indicated that <span class="highlight">ViT</span> outperformed the others in terms of classification accuracy. Based on this finding, we employed the <span class="highlight">ViT</span> model on the full dataset to enhance diagnostic performance and improve the spatial precision of the generated heatmaps.
+</p>
 </div>
   
 <div class="abstract-title">Dataset</div>
 <div class="abstract-body">
-We used the <span class="highlight">CheXpert-v1.0-small</span> dataset, a downsized version of the original <span class="highlight">CheXpert</span> dataset. It contains <span class="highlight">224,316 chest radiographs</span> from <span class="highlight">65,240 patients</span>, labeled with <span class="highlight">14 clinical observations</span>.<br>
-The labels were generated using an <span class="highlight">automated labeling system</span> capable of detecting and classifying findings, including those with <span class="highlight">inherent uncertainty</span>.<br>
-To ensure labeling reliability, a validation set of <span class="highlight">200 studies</span> was <span class="highlight">manually annotated</span> by three <span class="highlight">board-certified radiologists</span>.
+<p>
+  We used the <span class="highlight">CheXpert-v1.0-small</span> dataset, a downsized version of the original <span class="highlight">CheXpert</span> dataset. It contains <span class="highlight">224,316 chest radiographs</span> from <span class="highlight">65,240 patients</span>, labeled with <span class="highlight">14 clinical observations</span>.
+</p>
+
+<p>
+  The labels were generated using an <span class="highlight">automated labeling system</span> capable of detecting and classifying findings, including those with <span class="highlight">inherent uncertainty</span>.
+</p>
+
+<p>
+  To ensure labeling reliability, a validation set of <span class="highlight">200 studies</span> was <span class="highlight">manually annotated</span> by three <span class="highlight">board-certified radiologists</span>.
+</p>
 </div>
   
 <div style="text-align: center; margin: 0 auto 4rem auto;">
@@ -196,7 +212,7 @@ To ensure labeling reliability, a validation set of <span class="highlight">200 
 </script>
 
 
-<div class="abstract-title" style="margin-top: 4rem;">Results</div>  
+<div class="abstract-title" style="margin-top: 8rem;">Results</div>  
 <div class="figure">
   <img src="./Assets/figure1.png" alt="Figure 1">
   <div class="caption">
@@ -260,14 +276,16 @@ To ensure labeling reliability, a validation set of <span class="highlight">200 
   </div>
 </div>
 
-<div class="abstract-title" style="margin-top: 4rem;">Discussion And Future Work</div>
+<div class="abstract-title" style="margin-top: 8rem;">Discussion And Future Work</div>
 <div class="abstract-body">
   We evaluated three transformer (ViT, Swin, and BEiT TransFormer) on the CheXpert dataset, using both full and reduced versions to assess their performance. Among them, BEiT demonstrated the most robust results, attributed to its use of masked-image modeling during pre-training, which enhances generalization and the ability to capture diverse image features. For future work, we plan to conduct robustness tests by introducing small Gaussian noise or perturbations to input images, measuring performance degradation, and applying additional training to improve model resilience if necessary.
 </div>
 
-<div class="abstract-title">Final Presentation Q&A</div>
+<div class="abstract-title" style="margin-top: 8rem;">Final Presentation Q&A</div>
 <div class="abstract-body">
-  Q1. "How did you handle potential overfitting observed in ViT attention heatmaps?"<br>
+<p>
+  Q1. "How did you handle potential overfitting observed in ViT attention heatmaps?"
+</p>
   A1. "Initially, the <span class="highlight">ViT model</span> exhibited signs of <span class="highlight">overfitting</span> when trained to predict only <span class="highlight">4 labels</span>, as the limited and <span class="highlight">binary classification</span> task (negative/positive) introduced significant <span class="highlight">randomness</span>, causing the model to rely on <span class="highlight">guesswork</span> rather than genuine <span class="highlight">pattern learning</span>.
 
 <p>
@@ -277,19 +295,23 @@ To ensure labeling reliability, a validation set of <span class="highlight">200 
 <p>
   This comprehensive labeling encouraged the model to learn <span class="highlight">robust features</span> rather than memorizing limited patterns, ultimately resolving the issue of <span class="highlight">overfitting</span> observed earlier."
 </p>
-  Q2. “Can you provide insights into why BEiT achieved superior performance compared to ViT and Swin Transformers?”<br>
+<p>
+  Q2. “Can you provide insights into why BEiT achieved superior performance compared to ViT and Swin Transformers?”
+</p>
   A2. "<span class="highlight">BEiT’s</span> superior performance likely stems from its effective <span class="highlight">pre-training strategy</span>, specifically <span class="highlight">masked image modeling</span>, which encourages the model to learn <span class="highlight">robust</span> and <span class="highlight">generalized representations</span> from image data.
 
 <p>
   <span class="highlight">Attention visualizations</span> confirmed <span class="highlight">BEiT’s</span> ability to consistently and precisely focus on <span class="highlight">clinically relevant regions</span>, supporting the notion that <span class="highlight">BEiT</span> develops better <span class="highlight">internal representations</span> and <span class="highlight">decision-making capabilities</span> tailored for <span class="highlight">medical diagnosis tasks</span>."
 </p>
-  Q2. “Can you provide more details on the benchmark comparison of the three transformer models?”<br>
-  A2. "A comprehensive benchmark comparison of the three <span class="highlight">transformer-based models</span>—<span class="highlight">ViT</span>, <span class="highlight">Swin</span>, and <span class="highlight">BEiT</span>—was performed, evaluating their performance on <span class="highlight">accuracy</span>, <span class="highlight">loss metrics</span>, and <span class="highlight">interpretability</span> through <span class="highlight">attention visualizations</span>.
+<p>
+  Q3. “Can you provide more details on the benchmark comparison of the three transformer models?”
+</p>
+  A3. "A comprehensive benchmark comparison of the three <span class="highlight">transformer-based models</span>—<span class="highlight">ViT</span>, <span class="highlight">Swin</span>, and <span class="highlight">BEiT</span>—was performed, evaluating their performance on <span class="highlight">accuracy</span>, <span class="highlight">loss metrics</span>, and <span class="highlight">interpretability</span> through <span class="highlight">attention visualizations</span>.
 
 <p>
   A complete and detailed analysis of these comparisons, highlighting key strengths and weaknesses of each model, can be found 
-  <a href="#background" style="text-decoration: none; color: #1565c0; font-weight: bold;">here</a>.
-</p>"
+  <a href="#background" style="text-decoration: none; color: #1565c0; font-weight: bold;">here</a>."
+</p>
 </div>
   
 <div style="text-align: center; margin-top: 4rem;">
