@@ -5,9 +5,44 @@
 We utilized the CheXpert dataset, a large collection of chest X-rays, to explore the diagnostic performance of three Vision Transformer models—ViT, BEiT, and Swin. These models were trained to classify 14 labeled thoracic diseases, and we further aimed to visualize the model’s decision-making process using heatmaps that highlight the affected areas in the images.
 
 
-## Project Result
-Please refer to our GitHub page for detailed explanation  
-Click Here 👉[GitHub Page Link](https://leewoobin-ctrl.github.io/Project-6/)
+## Results
+
+We conducted a comparative evaluation of three transformer-based models—**ViT (Vision Transformer)**, **Swin Transformer**, and **BEiT**—on the CheXpert dataset. The models were trained and tested using both the full and downsampled (small) versions of the dataset. Performance was assessed using three key criteria:
+
+---
+
+### 1. Accuracy
+
+- **BEiT** achieved the highest **test accuracy**, indicating the best generalization ability to unseen data.
+- **ViT** recorded the highest **training accuracy**, but its **test accuracy dropped significantly**, showing signs of **overfitting**.
+- **Swin Transformer** showed **moderate performance** overall, balancing between ViT and BEiT.
+
+---
+
+### 2. Loss
+
+- **BEiT** maintained the **lowest loss** on both the training and test sets throughout training epochs.
+- **ViT** and **Swin** either showed **plateauing or increasing test loss**, indicating reduced learning effectiveness or potential overfitting.
+
+---
+
+### 3. Attention Visualization (Interpretability)
+
+We visualized attention maps from both ViT and BEiT using animated GIFs.
+
+- **ViT** exhibited **fragmented and inconsistent attention patterns**, sometimes focusing on irrelevant image regions such as blank spaces or corners.
+- **BEiT**, in contrast, showed **structured and lesion-focused attention**, with attention heads consistently highlighting clinically relevant regions.
+
+These visual differences demonstrate that BEiT offers **superior interpretability** and aligns better with diagnostic needs in medical imaging.
+
+---
+
+### Conclusion
+
+> **BEiT** demonstrated the most balanced and reliable performance among the three models.  
+> Thanks to its **masked image modeling pretraining**, BEiT achieved better generalization, lower loss, and more interpretable attention visualizations.  
+> It is, therefore, the most suitable model for **medical imaging diagnosis** in this evaluation.
+For a more detailed analysis and accompanying graphs, please refer to Here 👉[GitHub Page Link](https://leewoobin-ctrl.github.io/Project-6/)
 
 
 ## Final Presentation Q&A
