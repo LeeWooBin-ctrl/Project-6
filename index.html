@@ -82,33 +82,38 @@
 <div class="abstract-title">Abstract</div>
 <div class="abstract-body">
   <p>
-  We utilized the <strong>CheXpert</strong> dataset, a large-scale chest X-ray benchmark, to perform multi-label classification of 14 thoracic diseases and to localize pathological regions using heatmap-based explainability techniques.
+  We utilized the <b>CheXpert</b> dataset, a large-scale chest X-ray benchmark, to perform multi-label classification of 14 thoracic diseases and to localize pathological regions using heatmap-based explainability techniques.
 </p>
 <p>
-  To accomplish this, we evaluated three vision transformer architectures—<strong>ViT</strong>, <strong>BEiT</strong>, and <strong>Swin Transformer</strong>.
+  To accomplish this, we evaluated three vision transformer architectures—<b>ViT</b>, <b>BEiT</b>, and <b>Swin Transformer</b>.
 </p>
 <p>
-  Preliminary experiments on a test subset indicated that <strong>ViT</strong> outperformed the others in terms of classification accuracy. Based on this finding, we employed the ViT model on the full dataset to enhance diagnostic performance and improve the spatial precision of the generated heatmaps.
+  Preliminary experiments on a test subset indicated that <b>ViT</b> outperformed the others in terms of classification accuracy. Based on this finding, we employed the ViT model on the full dataset to enhance diagnostic performance and improve the spatial precision of the generated heatmaps.
 </p>
 </div>
 
 <div class="abstract-title">Dataset</div>
 <div class="abstract-body">
   <p>
-  We used the <strong>CheXpert-v1.0-small</strong> dataset, a downsized version of the original <strong>CheXpert</strong> dataset. It contains <strong>224,316 chest radiographs</strong> from <strong>65,240 patients</strong>, labeled with <strong>14 clinical observations</strong>.
+  We used the <b>CheXpert-v1.0-small</b> dataset, a downsized version of the original <b>CheXpert</b> dataset. It contains <b>224,316 chest radiographs</b> from <b>65,240 patients</b>, labeled with <b>14 clinical observations</b>.
 </p>
 
 <p>
-  The labels were generated using an <strong>automated labeling system</strong> capable of detecting and classifying findings, including those with <strong>inherent uncertainty</strong>.
+  The labels were generated using an <b>automated labeling system</b> capable of detecting and classifying findings, including those with <b>inherent uncertainty</b>.
 </p>
 <p>
   To ensure labeling reliability, a validation set of <strong>200 studies</strong> was <strong>manually annotated</strong> by three <strong>board-certified radiologists</strong>.
 </p>
 </div>
 <div style="text-align: center; margin: 0 auto 4rem auto;">
+<div style="display: flex; align-items: center;">
   <a href="https://www.kaggle.com/datasets/ashery/chexpert" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
-    CheXpert Dataset
+    CheXpert Small Dataset
   </a>
+  <a href="https://stanfordaimi.azurewebsites.net/datasets/8cbd9ed4-2eb9-4565-affc-111cf4f7ebe2" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
+    CheXpert Full Dataset
+  </a>
+</div>
 </div>
 
 <div class="abstract-title" style="margin-top: 4rem;">Experiment <span style="font-weight: normal; font-size: 20px;">(Three Vision Transformers)</span></div>
