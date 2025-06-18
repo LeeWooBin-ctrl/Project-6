@@ -44,7 +44,8 @@ These visual differences demonstrate that BEiT offers **superior interpretabilit
 > It is, therefore, the most suitable model for **medical imaging diagnosis** in this evaluation.
 For a more detailed analysis and accompanying graphs, please refer to Here 👉[GitHub Page Link](https://leewoobin-ctrl.github.io/Project-6/)
 
-## 🔧 Installation Steps
+
+## Installation Steps
 
 ### 1. Visit Our GitHub Page
 You can access our project via the following link:  
