@@ -85,37 +85,22 @@
 
 <div class="abstract-title">Abstract</div>
 <div class="abstract-body">
-<p>
-  We utilized the <span class="highlight">CheXpert</span> dataset, a large-scale chest X-ray benchmark, to perform multi-label classification of <span class="highlight">14 thoracic diseases</span> and to localize pathological regions using <span class="highlight">heatmap-based explainability techniques</span>.
-</p>
-
-<p>
-  To accomplish this, we evaluated three vision transformer architectures—<span class="highlight">ViT</span>, <span class="highlight">BEiT</span>, and <span class="highlight">Swin Transformer</span>.
-</p>
-
-<p>
-  Preliminary experiments on a test subset indicated that <span class="highlight">ViT</span> outperformed the others in terms of classification accuracy. Based on this finding, we employed the <span class="highlight">ViT</span> model on the full dataset to enhance diagnostic performance and improve the spatial precision of the generated heatmaps.
-</p>
+We utilized the <span class="highlight">CheXpert</span> dataset, a large-scale chest X-ray benchmark, to perform multi-label classification of <span class="highlight">14 thoracic diseases</span> and to localize pathological regions using <span class="highlight">heatmap-based explainability techniques</span>.<br>
+To accomplish this, we evaluated three vision transformer architectures—<span class="highlight">ViT</span>, <span class="highlight">BEiT</span>, and <span class="highlight">Swin Transformer</span>.<br>
+Preliminary experiments on a test subset indicated that <span class="highlight">ViT</span> outperformed the others in terms of classification accuracy. Based on this finding, we employed the <span class="highlight">ViT</span> model on the full dataset to enhance diagnostic performance and improve the spatial precision of the generated heatmaps.
 </div>
-
+  
 <div class="abstract-title">Dataset</div>
 <div class="abstract-body">
-<p>
-  We used the <span class="highlight">CheXpert-v1.0-small</span> dataset, a downsized version of the original <span class="highlight">CheXpert</span> dataset. It contains <span class="highlight">224,316 chest radiographs</span> from <span class="highlight">65,240 patients</span>, labeled with <span class="highlight">14 clinical observations</span>.
-</p>
-
-<p>
-  The labels were generated using an <span class="highlight">automated labeling system</span> capable of detecting and classifying findings, including those with <span class="highlight">inherent uncertainty</span>.
-</p>
-
-<p>
-  To ensure labeling reliability, a validation set of <span class="highlight">200 studies</span> was <span class="highlight">manually annotated</span> by three <span class="highlight">board-certified radiologists</span>.
-</p>
+We used the <span class="highlight">CheXpert-v1.0-small</span> dataset, a downsized version of the original <span class="highlight">CheXpert</span> dataset. It contains <span class="highlight">224,316 chest radiographs</span> from <span class="highlight">65,240 patients</span>, labeled with <span class="highlight">14 clinical observations</span>.<br>
+The labels were generated using an <span class="highlight">automated labeling system</span> capable of detecting and classifying findings, including those with <span class="highlight">inherent uncertainty</span>.<br>
+To ensure labeling reliability, a validation set of <span class="highlight">200 studies</span> was <span class="highlight">manually annotated</span> by three <span class="highlight">board-certified radiologists</span>.
 </div>
+  
 <div style="text-align: center; margin: 0 auto 4rem auto;">
 <div style="text-align: center;">
   <a href="https://www.kaggle.com/datasets/ashery/chexpert" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
-    CheXpert Dataset
+    CheXpert Small Dataset
   </a>
   <a href="https://stanfordaimi.azurewebsites.net/datasets/8cbd9ed4-2eb9-4565-affc-111cf4f7ebe2" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
     CheXpert Full Dataset
@@ -211,18 +196,16 @@
 </script>
 
 
-<div class="abstract-title">Results</div>  
+<div class="abstract-title" style="margin-top: 4rem;">Results</div>  
 <div class="figure">
   <img src="./Assets/figure1.png" alt="Figure 1">
   <div class="caption">
-<p>
   The graph presents a comparative evaluation of three transformer-based models: 
   <span class="highlight">Vision Transformer (ViT)</span>, 
   <span class="highlight">Swin Transformer</span>, and 
   <span class="highlight">BEiT</span>. Performance is tracked over 10 training epochs using 
   <span class="highlight">accuracy</span> and 
   <span class="highlight">loss</span> metrics on both training and test sets.
-</p>
 
 <p>
   From the accuracy graph (left), the 
@@ -277,7 +260,7 @@
   </div>
 </div>
 
-<div class="abstract-title">Discussion And Future Work</div>
+<div class="abstract-title" style="margin-top: 4rem;">Discussion And Future Work</div>
 <div class="abstract-body">
   We evaluated three transformer (ViT, Swin, and BEiT TransFormer) on the CheXpert dataset, using both full and reduced versions to assess their performance. Among them, BEiT demonstrated the most robust results, attributed to its use of masked-image modeling during pre-training, which enhances generalization and the ability to capture diverse image features. For future work, we plan to conduct robustness tests by introducing small Gaussian noise or perturbations to input images, measuring performance degradation, and applying additional training to improve model resilience if necessary.
 </div>
