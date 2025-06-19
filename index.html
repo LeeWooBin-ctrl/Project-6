@@ -1,385 +1,497 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Transformer for Medical AI</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     body {
       font-family: 'Noto Sans', sans-serif;
       margin: 2rem;
       line-height: 1.6;
+      font-weight: 400;
     }
+
+    p,
+    ul {
+      font-weight: 400;
+    }
+
     img {
       display: block;
-      margin: 2em auto 0 auto;
+      margin: 0 auto 0 auto;
       max-width: 60%;
     }
+
     h1 {
       text-align: center;
       font-size: 40px;
       font-weight: bold;
     }
+
     h2 {
       text-align: center;
       font-size: 20px;
       font-weight: bold;
     }
+
     h3 {
       text-align: center;
       font-size: 24px;
       font-weight: bold;
     }
+
     .author-list h2 {
       line-height: 1.2;
       margin: 0.2rem 0;
+      font-weight: 400;
     }
+
     .figure {
       text-align: center;
       margin-bottom: 1rem;
     }
-     .caption {
+
+    .caption {
       font-size: 16px;
       text-align: justify;
       color: #333;
       max-width: 800px;
       margin: 0 auto 2rem auto;
     }
-    .caption b {
-      font-weight: bold;
-    }
+
     .abstract-title {
       text-align: center;
-      font-size: 24px;
+      font-size: 30px;
       font-weight: bold;
       margin-top: 2rem;
     }
+
     .abstract-body {
       font-size: 16px;
       text-align: justify;
       max-width: 800px;
       margin: 0 auto 2rem auto;
     }
+
     .highlight {
-      color: #1565c0;  
+      color: #1565c0;
       font-weight: bold;
-    }    
+    }
   </style>
 </head>
+
 <body>
 
-<h1>Transformers for Medical AI</h1>
+  <h1>Transformers for Medical AI</h1>
 
-<h3>Project 6<h3>
+  <h3>Project 6<h3>
 
-<div class="author-list">
-  <h2>Zheng Hexing 2023311430</h2>
-  <h2>Chang Hwan Kim 2024321234</h2>
-  <h2>Maftuna Ziyamova 2024311551</h2>
-  <h2>Lee Woo Bin 2025311560</h2>
-</div>
+      <div class="author-list">
+        <h2>Zheng Hexing 2023311430</h2>
+        <h2>Chang Hwan Kim 2024321234</h2>
+        <h2>Maftuna Ziyamova 2024311551</h2>
+        <h2>Lee Woo Bin 2025311560</h2>
+      </div>
 
-<div class="figure">
-  <img src="./static/main1.png" alt="Main Image">
-</div>
+      <div class="figure">
+        <img src="./static/main1.png" alt="Main Image" style="margin-top: 1em;">
+      </div>
 
-<div class="abstract-title">Abstract</div>
-<div class="abstract-body">
-<p>
-  We utilized the <span class="highlight">CheXpert</span> dataset, a large-scale chest X-ray benchmark, to perform multi-label classification of <span class="highlight">14 thoracic diseases</span> and to localize pathological regions using <span class="highlight">heatmap-based explainability techniques</span>.
-</p>
+      <div class="abstract-title">Abstract</div>
+      <div class="abstract-body">
+        <p>
+          This project evaluates the effectiveness of transformer-based models—Vision Transformer (ViT), Swin
+          Transformer, and BEiT—for automated diagnosis using chest X-ray images from the
+          <span class="highlight">CheXpert dataset</span>.
+        </p>
 
-<p>
-  To accomplish this, we evaluated three vision transformer architectures—<span class="highlight">ViT</span>, <span class="highlight">BEiT</span>, and <span class="highlight">Swin Transformer</span>.
-</p>
+        <p>
+          We systematically compare these architectures by assessing accuracy, loss, and interpretability through
+          attention map visualization. Our experiments reveal that <span class="highlight">BEiT achieves superior
+            generalization performance</span>, consistently outperforming ViT and Swin on unseen data.
+          Further analysis demonstrates that models trained on substantially smaller datasets (11 GB versus over 400 GB)
+          retain comparable diagnostic accuracy, significantly reducing computational resources.
+          Attention visualization confirms that BEiT exhibits superior localization of clinically relevant regions,
+          enhancing interpretability and clinical trustworthiness.
+        </p>
 
-<p>
-  Preliminary experiments on a test subset indicated that <span class="highlight">ViT</span> outperformed the others in terms of classification accuracy. Based on this finding, we employed the <span class="highlight">ViT</span> model on the full dataset to enhance diagnostic performance and improve the spatial precision of the generated heatmaps.
-</p>
-</div>
-  
-<div class="abstract-title" style="margin-top: 8rem;">Dataset</div>
-<div class="abstract-body">
-<p>
-  We used the <span class="highlight">CheXpert-v1.0-small</span> dataset, a downsized version of the original <span class="highlight">CheXpert</span> dataset. It contains <span class="highlight">224,316 chest radiographs</span> from <span class="highlight">65,240 patients</span>, labeled with <span class="highlight">14 clinical observations</span>.
-</p>
-
-<p>
-  The labels were generated using an <span class="highlight">automated labeling system</span> capable of detecting and classifying findings, including those with <span class="highlight">inherent uncertainty</span>.
-</p>
-
-<p>
-  To ensure labeling reliability, a validation set of <span class="highlight">200 studies</span> was <span class="highlight">manually annotated</span> by three <span class="highlight">board-certified radiologists</span>.
-</p>
-</div>
-  
-<div style="text-align: center; margin: 0 auto 4rem auto;">
-<div style="text-align: center;">
-  <a href="https://www.kaggle.com/datasets/ashery/chexpert" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
-    CheXpert Small Dataset
-  </a>
-  <a href="https://stanfordaimi.azurewebsites.net/datasets/8cbd9ed4-2eb9-4565-affc-111cf4f7ebe2" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
-    CheXpert Full Dataset
-  </a>
-</div>
-</div>
-
-<div class="abstract-title" style="margin-top: 8rem;" id="background">Background <span style="font-weight: normal; font-size: 20px;">(Three Vision Transformers)</span></div>
-
-<style>
-  .tab-container {
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
-    gap: 1rem;
-  }
-  .tab-button {
-    padding: 0.7rem 2rem;
-    font-size: 16px;
-    border: 2px solid #aaa;
-    background-color: white;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background-color 0.3s;
-    font-family: 'Noto Sans', sans-serif;
-    width: 160px;
-    text-align: center;
-  }
-  .tab-button:hover {
-    background-color: #eee;
-  }
-  .tab-button.active {
-    background-color: #ddd;
-    font-weight: bold;
-  }
-  .tab-content {
-    display: none;
-    max-width: 800px;
-    margin: 1rem auto;
-    text-align: justify;
-    font-size: 16px;
-  }
-  .tab-content.active {
-    display: block;
-  }
-</style>
-
-<div class="tab-container">
-  <button class="tab-button active" onclick="showTab('vit')">ViT</button>
-  <button class="tab-button" onclick="showTab('beit')">BEiT</button>
-  <button class="tab-button" onclick="showTab('swin')">Swin</button>
-</div>
-
-<div id="vit" class="tab-content active" style="margin-bottom: 4rem;">
-  The Vision Transformer (ViT) applies the standard Transformer architecture directly to image patches, treating them as sequences similar to words in natural language. It splits the input image into fixed-size patches and processes them with self-attention mechanisms. ViT is known for its simplicity and scalability, performing well with large datasets but requiring significant data and compute resources to outperform CNN-based models.
-  <div style="text-align: center; margin-top: 1rem;">
-    <img src="./static/ViT.png" alt="ViT Image" style="max-width: 75%; margin-top: 1rem;">
-    <div style="margin-top: 1rem;">
-      <a href="./notebooks/vit_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">ViT Code(Download)</a>
-    </div>
-  </div>
-</div>
-
-<div id="beit" class="tab-content" style="margin-bottom: 4rem;">
-  BEiT builds upon ViT by introducing a pretraining strategy similar to BERT in NLP. It treats image patches as discrete visual tokens and learns bidirectional representations using a masked image modeling objective. This enables the model to better capture contextual relationships within the image, significantly improving performance in downstream tasks, especially when labeled data is limited.
-  <div style="text-align: center; margin-top: 1rem;">
-    <img src="./static/BEiT.png" alt="BEiT Image" style="max-width: 75%; margin-top: 1rem;">
-    <div style="margin-top: 1rem;">
-      <a href="./notebooks/BEiT_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">BEiT Code(Download)</a>
-    </div>
-  </div>
-</div>
-
-<div id="swin" class="tab-content" style="margin-bottom: 4rem;">
-  The Swin Transformer introduces a hierarchical architecture that processes images through non-overlapping local windows with shifted configurations across layers. This design enables both local and global representation learning while maintaining computational efficiency. Its ability to model long-range dependencies and multi-scale features makes it particularly effective for dense prediction tasks such as detection and segmentation.
-  <div style="text-align: center; margin-top: 1rem;">
-    <img src="./static/Swin.png" alt="Swin Image" style="max-width: 75%; margin-top: 1rem;">
-    <div style="margin-top: 1rem;">
-      <a href="./notebooks/swin_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">Swin Code(Download)</a>
-    </div>
-  </div>
-</div>
-
-<script>
-  function showTab(id) {
-    const tabs = document.querySelectorAll('.tab-button');
-    const contents = document.querySelectorAll('.tab-content');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    contents.forEach(content => content.classList.remove('active'));
-    document.querySelector(`#${id}`).classList.add('active');
-    event.target.classList.add('active');
-  }
-</script>
+        <p>
+          These results position <span class="highlight">BEiT as a robust and resource-efficient architecture </span>
+          for medical image analysis tasks,
+          highlighting the importance of comprehensive benchmarking in model selection for clinical applications.
+        </p>
+      </div>
 
 
-<div class="abstract-title" style="margin-top: 8rem;">Results</div>  
-<div class="figure">
-  <img src="./static/figure1.png" alt="Figure 1">
-  <div class="caption" style="margin-bottom: 5rem;">
-  The graph presents a comparative evaluation of three transformer-based models: 
-  <span class="highlight">Vision Transformer (ViT)</span>, 
-  <span class="highlight">Swin Transformer</span>, and 
-  <span class="highlight">BEiT</span>. Performance is tracked over 10 training epochs using 
-  <span class="highlight">accuracy</span> and 
-  <span class="highlight">loss</span> metrics on both training and test sets.
+      <div class="abstract-title" style="margin-top: 1em;">Dataset</div>
+      <div class="abstract-body">
+        <p>
+          We used the <span class="highlight">CheXpert-v1.0-small</span> dataset, a downsized version of the original
+          CheXpert dataset. It contains 224,316 chest radiographs from 65,240 patients, labeled with 14 clinical
+          observations.
+        </p>
 
-<p>
-  From the accuracy graph (left), the 
-  <span class="highlight">Swin Transformer</span> shows the highest training accuracy, but it underperforms on the test set. In contrast, the 
-  <span class="highlight">BEiT</span> model achieves the best test accuracy across epochs, suggesting stronger generalization to unseen data.
-</p>
+        <p>
+          The labels were generated using an automated labeling system capable of detecting and classifying findings,
+          including those with inherent uncertainty.
+        </p>
 
-<p>
-  The loss graph (right) supports this observation. 
-  <span class="highlight">BEiT</span> maintains the lowest test loss throughout, indicating more consistent and reliable predictions. Meanwhile, 
-  <span class="highlight">ViT</span> and 
-  <span class="highlight">Swin</span> show either plateauing or increasing test loss, pointing to possible overfitting.
-</p>
+        <p>
+          To ensure labeling reliability, a validation set of 200 studies was manually annotated by three <span
+            class="highlight">board-certified radiologists</span>.
+        </p>
 
-<p>
-  Overall, <span class="highlight">BEiT</span> demonstrates the best balance between learning and generalization, making it the most robust among the three models in this evaluation.
-</p>
-  </div>
-</div>
+      </div>
 
-<div class="figure">
-  <img src="./static/figure2.png" alt="Figure 2">
-  <div class="caption" style="margin-bottom: 5rem;">
-<p>
-  The comparison between the <span class="highlight">full</span> and <span class="highlight">downsampled</span> datasets shows that model performance remains <span class="highlight">nearly unchanged</span>, even when trained on significantly less data.
-</p>
+      <div style="text-align: center; margin: 0 auto 4rem auto;">
+        <div style="text-align: center;">
+          <a href="https://www.kaggle.com/datasets/ashery/chexpert" target="_blank" style="
+              text-decoration: none; 
+              font-size: 16px; 
+              border: 1px solid #888; 
+              padding: 0.4rem 1rem; 
+              border-radius: 6px; 
+              color: #333; 
+              margin: 0 0.5rem;
+              transition: background-color 0.3s;
+            " onmouseover="this.style.backgroundColor='#f0f0f0';"
+            onmouseout="this.style.backgroundColor='transparent';">
+            CheXpert Small Dataset
+          </a>
 
-<p>
-  Despite the <span class="highlight">full dataset</span> being over <span class="highlight">400 GB</span> and the <span class="highlight">downsampled version</span> only <span class="highlight">11 GB</span>, <span class="highlight">accuracy</span> and <span class="highlight">loss</span> metrics are almost identical.
-</p>
+          <a href="https://stanfordaimi.azurewebsites.net/datasets/8cbd9ed4-2eb9-4565-affc-111cf4f7ebe2" target="_blank"
+            style="
+              text-decoration: none; 
+              font-size: 16px; 
+              border: 1px solid #888; 
+              padding: 0.4rem 1rem; 
+              border-radius: 6px; 
+              color: #333; 
+              margin: 0 0.5rem;
+              transition: background-color 0.3s;
+            " onmouseover="this.style.backgroundColor='#f0f0f0';"
+            onmouseout="this.style.backgroundColor='transparent';">
+            CheXpert Full Dataset
+          </a>
+        </div>
+      </div>
 
-<p>
-  This finding highlights the potential for substantial <span class="highlight">resource savings</span>—in terms of both <span class="highlight">storage</span> and <span class="highlight">computational cost</span>, without sacrificing <span class="highlight">model effectiveness</span>.
-</p>
-  </div>
-</div>
 
-<div class="figure">
-  <img src="./static/figure3.1.png" alt="Figure 3">
-  <div class="caption" style="margin-bottom: 5rem;">
-<p>
-  The <span class="highlight">CLS token</span>, designed to aggregate <span class="highlight">global information</span> across the image, can be leveraged to create <span class="highlight">2D attention heatmaps</span> by visualizing how <span class="highlight">attention</span> is distributed across patches.
-</p>
+      <div class="abstract-title" style="margin-top: 1em;" id="background">Background </div>
 
-<p>
-  The <span class="highlight">heatmaps</span> show that as the model improves, its attention becomes more focused on <span class="highlight">disease-relevant regions</span>.
-</p>
+      <style>
+        .tab-container {
+          display: flex;
+          justify-content: center;
+          margin: 1rem 0;
+          gap: 1rem;
+        }
 
-<p>
-  Initially, the model fails to <span class="highlight">localize lesions</span> accurately, but after training updates, it correctly highlights <span class="highlight">critical areas</span>, demonstrating improved <span class="highlight">interpretability</span> and <span class="highlight">diagnostic alignment</span>.
-</p>
-  </div>
-</div>
+        .tab-button {
+          padding: 0.7rem 2rem;
+          font-size: 16px;
+          border: 2px solid #aaa;
+          background-color: white;
+          cursor: pointer;
+          border-radius: 6px;
+          transition: background-color 0.3s;
+          font-family: 'Noto Sans', sans-serif;
+          width: 160px;
+          text-align: center;
+        }
 
-<div class="abstract-title" style="margin-top: 8rem;">Attention Visualization : ViT vs BEiT</div>  
-<div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
-  <div class="figure">
-    <img src="./static/ViT.gif" alt="ViT Attention Visualization" style="width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <div style="text-align: center; margin-top: 0.5rem;">ViT Attention</div>
-  </div>
-  <div class="figure">
-    <img src="./static/BEiT.gif" alt="BEiT Attention Visualization" style="width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-    <div style="text-align: center; margin-top: 0.5rem;">BEiT Attention</div>
-  </div>
-</div>
-  
-<div class="caption" style="margin-bottom: 5rem;">
-<p>
-  These GIFs illustrate how <span class="highlight">attention heads</span> from two different <span class="highlight">transformer architectures</span>—<span class="highlight">Vision Transformer (ViT)</span> and <span class="highlight">BEiT</span>—distribute focus across the input <span class="highlight">chest X-ray</span>.
-</p>
+        .tab-button:hover {
+          background-color: #eee;
+        }
 
-<p>
-  <span class="highlight">Left: ViT Attention</span><br>
-  The <span class="highlight">attention patterns</span> in <span class="highlight">ViT</span> appear <span class="highlight">fragmented</span> and <span class="highlight">inconsistent</span> across heads. Some heads attend to <span class="highlight">irrelevant areas</span> (e.g., image corners or blank regions), and there is limited focus on the actual <span class="highlight">lesion site</span>. This suggests <span class="highlight">lower interpretability</span> and a lack of specialization in directing attention toward <span class="highlight">disease-relevant features</span>.
-</p>
+        .tab-button.active {
+          background-color: #ddd;
+          /* font-weight: bold; */
+        }
 
-<p>
-  <span class="highlight">Right: BEiT Attention</span><br>
-  <span class="highlight">BEiT</span> shows more <span class="highlight">concentrated</span> and <span class="highlight">structured attention patterns</span>. As the heads cycle, the focus tends to remain closer to the <span class="highlight">lesion</span> or <span class="highlight">medically meaningful regions</span>, implying <span class="highlight">stronger feature localization</span>. This behavior reflects <span class="highlight">BEiT’s enhanced representation learning</span> and better alignment with <span class="highlight">diagnostic cues</span> in the image.
-</p>
+        .tab-content {
+          display: none;
+          max-width: 800px;
+          margin: 1rem auto;
+          text-align: justify;
+          font-size: 16px;
+        }
 
-<p>
-  Overall, these visualizations highlight how <span class="highlight">BEiT</span> more effectively allocates attention across its heads, offering greater <span class="highlight">interpretability</span> and potential <span class="highlight">reliability</span> in <span class="highlight">medical imaging tasks</span> compared to <span class="highlight">ViT</span>.
-</p>
-</div>
+        .tab-content.active {
+          display: block;
+        }
+      </style>
 
-<div class="abstract-title">Discussion And Future Work</div>
-<div class="abstract-body">
-<p>
-  We evaluated three <span class="highlight">transformer</span> models (<span class="highlight">ViT</span>, <span class="highlight">Swin</span>, and <span class="highlight">BEiT Transformer</span>) on the <span class="highlight">CheXpert</span> dataset, using both <span class="highlight">full</span> and <span class="highlight">reduced</span> versions to assess their performance.
-</p>
+      <div class="tab-container">
+        <button class="tab-button active" onclick="showTab('vit')">ViT</button>
+        <button class="tab-button" onclick="showTab('beit')">BEiT</button>
+        <button class="tab-button" onclick="showTab('swin')">Swin</button>
+      </div>
 
-<p>
-  Among them, <span class="highlight">BEiT</span> demonstrated the most <span class="highlight">robust results</span>, attributed to its use of <span class="highlight">masked-image modeling</span> during pre-training, which enhances <span class="highlight">generalization</span> and the ability to capture <span class="highlight">diverse image features</span>.
-</p>
+      <div id="vit" class="tab-content active" style="margin-bottom: 4rem;">
+        <p>
+          The Vision Transformer (ViT) applies the standard Transformer architecture directly to image patches, treating
+          them as sequences similar to words in natural language. It splits the input image into fixed-size patches and
+          processes them with self-attention mechanisms. ViT is known for its simplicity and scalability, performing
+          well
+          with large datasets but requiring significant data and compute resources to outperform CNN-based models. </p>
+        <div style="text-align: center; margin-top: 1rem;">
+          <img src="./static/ViT.png" alt="ViT Image" style="max-width: 75%; margin-top: 1rem;">
+          <div style="margin-top: 1rem;">
+            <a href="./notebooks/vit_transformer.ipynb" target="_blank"
+              style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">ViT
+              Code (Download)</a>
+          </div>
+        </div>
+      </div>
 
-<p>
-  For <span class="highlight">future work</span>, we plan to conduct <span class="highlight">robustness tests</span> by introducing small <span class="highlight">Gaussian noise</span> or <span class="highlight">perturbations</span> to input images, measuring <span class="highlight">performance degradation</span>, and applying additional training to improve <span class="highlight">model resilience</span> if necessary.
-</p>
-</div>
+      <div id="beit" class="tab-content" style="margin-bottom: 4rem;">
+        <p>BEiT builds upon ViT by introducing a pretraining strategy similar to BERT in NLP. It treats image patches as
+          discrete visual tokens and learns bidirectional representations using a masked image modeling objective. This
+          enables the model to better capture contextual relationships within the image, significantly improving
+          performance in downstream tasks, especially when labeled data is limited. </p>
+        <div style="text-align: center; margin-top: 1rem;">
+          <img src="./static/BEiT.png" alt="BEiT Image" style="max-width: 75%; margin-top: 1rem;">
+          <div style="margin-top: 1rem;">
+            <a href="./notebooks/BEiT_transformer.ipynb" target="_blank"
+              style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">BEiT
+              Code (Download)</a>
+          </div>
+        </div>
+      </div>
 
-<div class="abstract-title" style="margin-top: 8rem;">Final Presentation Q&A</div>
-<div class="abstract-body">
-<p>
-  Q1. "How did you handle potential overfitting observed in ViT attention heatmaps?"
-</p>
-  A1. "Initially, the <span class="highlight">ViT model</span> exhibited signs of <span class="highlight">overfitting</span> when trained to predict only <span class="highlight">4 labels</span>, as the limited and <span class="highlight">binary classification</span> task (negative/positive) introduced significant <span class="highlight">randomness</span>, causing the model to rely on <span class="highlight">guesswork</span> rather than genuine <span class="highlight">pattern learning</span>.
+      <div id="swin" class="tab-content" style="margin-bottom: 4rem;">
+        <p>
+          The Swin Transformer introduces a hierarchical architecture that processes images through non-overlapping
+          local
+          windows with shifted configurations across layers. This design enables both local and global representation
+          learning while maintaining computational efficiency. Its ability to model long-range dependencies and
+          multi-scale features makes it particularly effective for dense prediction tasks such as detection and
+          segmentation.</p>
+        <div style="text-align: center; margin-top: 1rem;">
+          <img src="./static/Swin.png" alt="Swin Image" style="max-width: 75%; margin-top: 1rem;">
+          <div style="margin-top: 1rem;">
+            <a href="./notebooks/swin_transformer.ipynb" target="_blank"
+              style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">Swin
+              Code (Download)</a>
+          </div>
+        </div>
+      </div>
 
-<p>
-  After properly training the model to predict all <span class="highlight">14 labels</span>—thus enriching the <span class="highlight">complexity</span> and <span class="highlight">diversity</span> of the training data—the <span class="highlight">ViT model</span> showed substantially reduced <span class="highlight">overfitting</span>.
-</p>
+      <script>
+        function showTab(id) {
+          const tabs = document.querySelectorAll('.tab-button');
+          const contents = document.querySelectorAll('.tab-content');
+          tabs.forEach(tab => tab.classList.remove('active'));
+          contents.forEach(content => content.classList.remove('active'));
+          document.querySelector(`#${id}`).classList.add('active');
+          event.target.classList.add('active');
+        }
+      </script>
 
-<p>
-  This comprehensive labeling encouraged the model to learn <span class="highlight">robust features</span> rather than memorizing limited patterns, ultimately resolving the issue of <span class="highlight">overfitting</span> observed earlier."
-</p>
-<p>
-  Q2. “Can you provide insights into why BEiT achieved superior performance compared to ViT and Swin Transformers?”
-</p>
-  A2. "<span class="highlight">BEiT’s</span> superior performance likely stems from its effective <span class="highlight">pre-training strategy</span>, specifically <span class="highlight">masked image modeling</span>, which encourages the model to learn <span class="highlight">robust</span> and <span class="highlight">generalized representations</span> from image data.
 
-<p>
-  <span class="highlight">Attention visualizations</span> confirmed <span class="highlight">BEiT’s</span> ability to consistently and precisely focus on <span class="highlight">clinically relevant regions</span>, supporting the notion that <span class="highlight">BEiT</span> develops better <span class="highlight">internal representations</span> and <span class="highlight">decision-making capabilities</span> tailored for <span class="highlight">medical diagnosis tasks</span>."
-</p>
-<p>
-  Q3. “Can you provide more details on the benchmark comparison of the three transformer models?”
-</p>
-  A3. "A comprehensive benchmark comparison of the three <span class="highlight">transformer-based models</span>—<span class="highlight">ViT</span>, <span class="highlight">Swin</span>, and <span class="highlight">BEiT</span>—was performed, evaluating their performance on <span class="highlight">accuracy</span>, <span class="highlight">loss metrics</span>, and <span class="highlight">interpretability</span> through <span class="highlight">attention visualizations</span>.
+      <div class="abstract-title" style="margin-top: 2rem;">Results</div>
+      <div class="figure">
+        <img src="./static/figure1.png" alt="Figure 1" style="margin: 0 auto 0 auto;">
+        <div class="caption" style="margin-bottom: 1rem;">
+          <p>
+            The graph presents a comparative evaluation of three transformer-based models:
+            <span class="highlight">Vision Transformer (ViT)</span>,
+            <span class="highlight">Swin Transformer</span>, and
+            <span class="highlight">BEiT</span>. Performance is tracked over 10 training epochs using
+            <span class="highlight">accuracy</span> and
+            <span class="highlight">loss</span> metrics on both training and test sets.
+          </p>
+          <ul>
+            <li>
+              From the accuracy graph <b>(left)</b>, the <span class="highlight">Swin Transformer</span> shows the
+              highest training accuracy but underperforms on the test set. In contrast, the <span
+                class="highlight">BEiT</span> model achieves the best test accuracy across epochs, suggesting stronger
+              generalization to unseen data.
+            </li>
+            <li>
+              The loss graph <b>(right)</b> supports this observation. <span class="highlight">BEiT</span> maintains the
+              lowest test loss throughout, indicating more consistent and reliable predictions. Meanwhile, ViT and Swin
+              show either plateauing or increasing test loss, pointing to possible overfitting.
+            </li>
+          </ul>
 
-<p>
-  A complete and detailed analysis of these comparisons, highlighting key strengths and weaknesses of each model, can be found 
-  <a href="#background" style="text-decoration: none; color: #1565c0; font-weight: bold;">here</a>."
-</p>
-</div>
+          <p>
+            Overall, <span class="highlight">BEiT</span> demonstrates the best balance between learning and
+            generalization, making it the most robust among the three models in this evaluation.
+          </p>
 
-<div class="abstract-title" style="margin-top: 8rem;">Team Members & Their Contributions</div>
-<div class="abstract-body">
-<p>
-  Zheng Hexing(2023311430) : Investigated the SWIN Transformer
-</p>
+        </div>
+      </div>
 
-<p>
-  Chang Hwan Kim(2024321234) : Implemented heatmap visualizations; contributed to the GitHub repository
-</p>
+      <div class="figure">
+        <img src="./static/figure2.png" alt="Figure 2">
+        <div class="caption" style="margin-bottom: 3rem;">
+          <p>
+            The comparison between the full and downsampled datasets shows that model performance remains <span
+              class="highlight">nearly unchanged</span>, even when trained on significantly less data.
+          </p>
 
-<p>
-  Maftuna Ziyamova(2024311551) : Investigated Vision Transformers including ViT, BEIT, and SWIN; contributed to heatmap analysis
-</p>
+          <p>
+            Despite the full dataset being over 400 GB and the downsampled version only 11 GB, accuracy and loss metrics
+            are almost identical.
+          </p>
 
-<p>
-  Lee Woo Bin(2025311560) : Investigated the BEIT Transformer; created and submitted the GitHub repository
-</p>
-</div>
-  
-<div style="text-align: center; margin-top: 4rem;">
-  <a href="./presentation - Transformer For Medical AI.pdf" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
-    Final Presentation Report
-  </a>
-</div>
+          <p>
+            This finding highlights the potential for substantial <span class="highlight">resource savings</span>—in
+            terms of both storage and computational cost, without sacrificing <span class="highlight">model
+              effectiveness</span>.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="figure">
+        <img src="./static/figure3.1.png" alt="Figure 3">
+        <div class="caption" style="margin-bottom: 2rem;">
+          <p>
+            The <span class="highlight">CLS token</span>, designed to aggregate global information across the image, can
+            be leveraged to create 2D attention heatmaps by visualizing how attention is distributed across patches.
+          </p>
+
+          <p>
+            The heatmaps show that as the model improves, its attention becomes more focused on <span
+              class="highlight">disease-relevant regions</span>.
+          </p>
+
+          <p>
+            Initially, the model fails to localize lesions accurately, but after training updates, it correctly
+            highlights critical areas, demonstrating improved <span class="highlight">interpretability</span> and
+            diagnostic alignment.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="abstract-title" style="margin-top: 2em;">Attention Visualization: ViT vs BEiT</div>
+      <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
+        <div class="figure">
+          <img src="./static/ViT.gif" alt="ViT Attention Visualization"
+            style="width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+          <div style="text-align: center; margin-top: 0.5rem;">ViT Attention</div>
+        </div>
+        <div class="figure">
+          <img src="./static/BEiT.gif" alt="BEiT Attention Visualization"
+            style="width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+          <div style="text-align: center; margin-top: 0.5rem;">BEiT Attention</div>
+        </div>
+      </div>
+
+      <div class="caption" style="margin-bottom: 1rem;">
+        <p>
+          These GIFs illustrate how attention heads from two different transformer architectures—<span
+            class="highlight">Vision Transformer (ViT)</span> and <span class="highlight">BEiT</span>—distribute focus
+          across chest X-ray images.
+        </p>
+
+        <ul>
+          <li>
+            <b>ViT Attention (Left):</b><br>
+            Attention patterns in ViT appear fragmented and inconsistent. Some heads attend to irrelevant areas, such as
+            image corners or blank regions, with limited focus on the lesion site. This suggests lower interpretability
+            and insufficient specialization in directing attention toward disease-relevant features.
+          </li>
+
+          <li>
+            <b>BEiT Attention (Right)</b>:<br>
+            BEiT shows more <span class="highlight">structured attention patterns</span>. Attention remains consistently
+            focused near the lesion or medically meaningful regions, reflecting stronger feature localization. This
+            indicates BEiT’s enhanced representation learning and better alignment with diagnostic cues.
+          </li>
+        </ul>
+
+
+        <p>
+          Overall, these visualizations highlight BEiT’s more effective attention allocation, resulting in greater <span
+            class="highlight">interpretability</span> and reliability in medical imaging tasks compared to ViT.
+        </p>
+
+      </div>
+
+      <div class="abstract-title">Discussion And Future Work</div>
+      <div class="abstract-body">
+        <p>
+          We evaluated three transformer models (ViT, Swin, and BEiT Transformer) on the
+          <span class="highlight">CheXpert</span> dataset, using both full and reduced versions to assess their
+          performance.
+        </p>
+
+        <p>
+          Among them, <span class="highlight">BEiT</span> demonstrated the most robust results, attributed to its use of
+          <span class="highlight">masked-image modeling</span> during pre-training, which enhances generalization and
+          the ability to capture diverse image features.
+        </p>
+
+        <p>
+          <span class="highlight">For future work,</span> we plan to conduct robustness tests by introducing small Gaussian noise or perturbations to
+          input images, measuring performance degradation, and applying additional training to improve model resilience
+          if necessary.
+        </p>
+
+      </div>
+
+      <div class="abstract-title" style="margin-top: 2rem;">Final Presentation Q&A</div>
+      <div class="abstract-body">
+        <p>
+          <b>A1:</b> Initially, the ViT model exhibited signs of <span class="highlight">overfitting</span> when trained to predict only 4 labels. The limited binary classification task introduced significant randomness, causing the model to rely more on guesswork rather than genuine pattern learning.
+        </p>
+        
+        <p>
+          After properly training the model to predict all 14 labels, enriching the complexity and diversity of the training data, the ViT model showed substantially reduced <span class="highlight">overfitting</span>. This comprehensive labeling encouraged the model to learn robust features instead of memorizing limited patterns, resolving the previously observed issues.
+        </p>
+        
+        <p>
+          <b>Q2:</b> Can you provide insights into why BEiT achieved superior performance compared to ViT and Swin Transformers?
+        </p>
+        
+        <p>
+          <b>A2:</b> BEiT’s superior performance likely stems from its effective pre-training strategy, specifically <span class="highlight">masked image modeling</span>, which encourages the model to learn generalized representations from image data.
+        </p>
+        
+        <p>
+          Attention visualizations confirmed BEiT’s ability to consistently focus on clinically relevant regions, indicating enhanced internal representations and better decision-making capabilities for medical diagnosis tasks.
+        </p>
+        
+        <p>
+          <b>Q3:</b> Can you provide more details on the benchmark comparison of the three transformer models?
+        </p>
+        
+        <p>
+          <b>A3:</b> We conducted a comprehensive benchmark comparison of three transformer-based models—ViT, Swin, and BEiT—evaluating their accuracy, loss metrics, and interpretability through attention visualizations.
+        </p>
+        
+        <p>
+          A detailed analysis highlighting each model's strengths and weaknesses can be found <a href="#background" style="text-decoration: none; color: #1565c0;">here</a>.
+        </p>
+        
+        
+      </div>
+
+      <div class="abstract-title" style="margin-top: 1rem;">Contributions</div>
+      <div class="abstract-body">
+          <ul>
+            <li><b>Zheng Hexing (2023311430)</b> – Investigated the Swin Transformer.</li>
+            <li><b>Chang Hwan Kim (2024321234)</b> – Implemented heatmap visualizations; contributed to the GitHub repository.</li>
+            <li><b>Maftuna Ziyamova (2024311551)</b> – Investigated Vision Transformers including ViT, BEiT, and Swin; contributed to heatmap analysis; presented the project; overviewed and improved the website/repo.</li>
+            <li><b>Lee Woo Bin (2025311560)</b> – Investigated the BEiT Transformer; created and submitted the GitHub repository.</li>
+          </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 1rem;">
+        <a href="./presentation - Transformer For Medical AI.pdf" target="_blank"
+          style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
+          Final Presentation Report
+        </a>
+      </div>
 
 </body>
+
 </html>
