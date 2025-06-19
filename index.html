@@ -80,7 +80,7 @@
 </div>
 
 <div class="figure">
-  <img src="./Assets/main1.png" alt="Main Image">
+  <img src="./static/main1.png" alt="Main Image">
 </div>
 
 <div class="abstract-title">Abstract</div>
@@ -173,9 +173,9 @@
 <div id="vit" class="tab-content active" style="margin-bottom: 4rem;">
   The Vision Transformer (ViT) applies the standard Transformer architecture directly to image patches, treating them as sequences similar to words in natural language. It splits the input image into fixed-size patches and processes them with self-attention mechanisms. ViT is known for its simplicity and scalability, performing well with large datasets but requiring significant data and compute resources to outperform CNN-based models.
   <div style="text-align: center; margin-top: 1rem;">
-    <img src="./Assets/ViT.png" alt="ViT Image" style="max-width: 75%; margin-top: 1rem;">
+    <img src="./static/ViT.png" alt="ViT Image" style="max-width: 75%; margin-top: 1rem;">
     <div style="margin-top: 1rem;">
-      <a href="./Assets/vit_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">ViT Code(Download)</a>
+      <a href="./notebooks/vit_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">ViT Code(Download)</a>
     </div>
   </div>
 </div>
@@ -183,9 +183,9 @@
 <div id="beit" class="tab-content" style="margin-bottom: 4rem;">
   BEiT builds upon ViT by introducing a pretraining strategy similar to BERT in NLP. It treats image patches as discrete visual tokens and learns bidirectional representations using a masked image modeling objective. This enables the model to better capture contextual relationships within the image, significantly improving performance in downstream tasks, especially when labeled data is limited.
   <div style="text-align: center; margin-top: 1rem;">
-    <img src="./Assets/BEiT.png" alt="BEiT Image" style="max-width: 75%; margin-top: 1rem;">
+    <img src="./static/BEiT.png" alt="BEiT Image" style="max-width: 75%; margin-top: 1rem;">
     <div style="margin-top: 1rem;">
-      <a href="./Assets/BEiT_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">BEiT Code(Download)</a>
+      <a href="./notebooks/BEiT_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">BEiT Code(Download)</a>
     </div>
   </div>
 </div>
@@ -193,9 +193,9 @@
 <div id="swin" class="tab-content" style="margin-bottom: 4rem;">
   The Swin Transformer introduces a hierarchical architecture that processes images through non-overlapping local windows with shifted configurations across layers. This design enables both local and global representation learning while maintaining computational efficiency. Its ability to model long-range dependencies and multi-scale features makes it particularly effective for dense prediction tasks such as detection and segmentation.
   <div style="text-align: center; margin-top: 1rem;">
-    <img src="./Assets/Swin.png" alt="Swin Image" style="max-width: 75%; margin-top: 1rem;">
+    <img src="./static/Swin.png" alt="Swin Image" style="max-width: 75%; margin-top: 1rem;">
     <div style="margin-top: 1rem;">
-      <a href="./Assets/swin_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">Swin Code(Download)</a>
+      <a href="./notebooks/swin_transformer.ipynb" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333;">Swin Code(Download)</a>
     </div>
   </div>
 </div>
@@ -214,7 +214,7 @@
 
 <div class="abstract-title" style="margin-top: 8rem;">Results</div>  
 <div class="figure">
-  <img src="./Assets/figure1.png" alt="Figure 1">
+  <img src="./static/figure1.png" alt="Figure 1">
   <div class="caption" style="margin-bottom: 5rem;">
   The graph presents a comparative evaluation of three transformer-based models: 
   <span class="highlight">Vision Transformer (ViT)</span>, 
@@ -243,7 +243,7 @@
 </div>
 
 <div class="figure">
-  <img src="./Assets/figure2.png" alt="Figure 2">
+  <img src="./static/figure2.png" alt="Figure 2">
   <div class="caption" style="margin-bottom: 5rem;">
 <p>
   The comparison between the <span class="highlight">full</span> and <span class="highlight">downsampled</span> datasets shows that model performance remains <span class="highlight">nearly unchanged</span>, even when trained on significantly less data.
@@ -260,7 +260,7 @@
 </div>
 
 <div class="figure">
-  <img src="./Assets/figure3.1.png" alt="Figure 3">
+  <img src="./static/figure3.1.png" alt="Figure 3">
   <div class="caption" style="margin-bottom: 5rem;">
 <p>
   The <span class="highlight">CLS token</span>, designed to aggregate <span class="highlight">global information</span> across the image, can be leveraged to create <span class="highlight">2D attention heatmaps</span> by visualizing how <span class="highlight">attention</span> is distributed across patches.
@@ -279,11 +279,11 @@
 <div class="abstract-title" style="margin-top: 8rem;">Attention Visualization : ViT vs BEiT</div>  
 <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
   <div class="figure">
-    <img src="./Assets/ViT.gif" alt="ViT Attention Visualization" style="width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <img src="./static/ViT.gif" alt="ViT Attention Visualization" style="width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
     <div style="text-align: center; margin-top: 0.5rem;">ViT Attention</div>
   </div>
   <div class="figure">
-    <img src="./Assets/BEiT.gif" alt="BEiT Attention Visualization" style="width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <img src="./static/BEiT.gif" alt="BEiT Attention Visualization" style="width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
     <div style="text-align: center; margin-top: 0.5rem;">BEiT Attention</div>
   </div>
 </div>
@@ -376,7 +376,7 @@
 </div>
   
 <div style="text-align: center; margin-top: 4rem;">
-  <a href="./Assets/Transformer For Medical AI.pdf" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
+  <a href="./presentation - Transformer For Medical AI.pdf" target="_blank" style="text-decoration: none; font-size: 16px; border: 1px solid #888; padding: 0.4rem 1rem; border-radius: 6px; color: #333; margin: 0 0.5rem;">
     Final Presentation Report
   </a>
 </div>

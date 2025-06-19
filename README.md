@@ -88,7 +88,7 @@ You can access our project via the following link to learn more:
 
 ---
 
-## Final Presentation Q&A
+## 🙋‍♂️ Final Presentation Q&A
 Q1. How did you handle potential overfitting observed in ViT attention heatmaps?
 
 > A1. Initially, the ViT model exhibited signs of overfitting when trained to predict only 4 labels, as the limited and binary classification task (negative/positive) introduced significant randomness, causing the model to rely on guesswork rather than genuine pattern learning. After properly training the model to predict all 14 labels—thus enriching the complexity and diversity of the training data—the ViT model showed substantially reduced overfitting. This comprehensive labeling encouraged the model to learn robust features rather than memorizing limited patterns, ultimately resolving the issue of overfitting observed earlier.
@@ -102,7 +102,7 @@ Q3. Can you provide more details on the benchmark comparison of the three transf
 > A3. A comprehensive benchmark comparison of the three transformer-based models—ViT, Swin, and BEiT—was performed, evaluating their performance on accuracy, loss metrics, and interpretability through attention visualizations. A complete and detailed analysis of these comparisons, highlighting key strengths and weaknesses of each model, can be found our GitHub page (The Background part)  
 
 
-## Contributions
+## 🖋 Contributions
 - **Zheng Hexing** (2023311430) - Investigated the Swin Transformer  
 - **Chang Hwan Kim** (2024321234) - Implemented heatmap visualizations; contributed to the GitHub repository  
 - **Maftuna Ziyamova** (2024311551) - Investigated Vision Transformers including ViT, BEIT, and Swin; contributed to heatmap analysis; presented the project; overviewed and improved the website/repo
